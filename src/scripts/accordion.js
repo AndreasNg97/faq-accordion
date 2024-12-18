@@ -15,6 +15,7 @@ export class Accordion {
 
   createAccordionItem(item) {
     const accordionItem = document.createElement("div");
+
     accordionItem.classList.add("accordion-item");
 
     const accordionHeader = this.createAccordionHeader(item);
@@ -30,8 +31,11 @@ export class Accordion {
 
   createAccordionHeader(item) {
     const accordionHeader = document.createElement("button");
+
     accordionHeader.classList.add("accordion-header");
+
     accordionHeader.innerText = item.fields.name;
+
     accordionHeader.setAttribute("aria-expanded", "false");
     accordionHeader.setAttribute("aria-controls", item.fields.internalName);
     accordionHeader.setAttribute("role", "button");
@@ -39,7 +43,6 @@ export class Accordion {
     accordionHeader.addEventListener("click", () => {
       this.toggleAccordionContent(accordionHeader, item.fields.internalName);
     });
-
     accordionHeader.addEventListener("keydown", (event) => {
       this.handleKeyboardNavigation(event, item);
     });
@@ -49,9 +52,12 @@ export class Accordion {
 
   createAccordionContent(item) {
     const accordionContent = document.createElement("div");
+
     accordionContent.classList.add("accordion-content");
+
     accordionContent.setAttribute("id", item.fields.internalName);
     accordionContent.setAttribute("role", "region");
+
     accordionContent.innerHTML = `<p>${item.fields.text}</p>`;
 
     return accordionContent;
@@ -62,7 +68,9 @@ export class Accordion {
     const isActive = content.classList.contains("active");
 
     content.classList.toggle("active", !isActive);
+
     header.setAttribute("aria-expanded", !isActive);
+
     content.setAttribute("aria-hidden", isActive);
   }
 
