@@ -1,4 +1,11 @@
-.hello {
-  font-size: 24px;
+main {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h1 {
   color: red;
 }
