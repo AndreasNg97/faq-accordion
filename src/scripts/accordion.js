@@ -34,6 +34,7 @@ export class Accordion {
     accordionHeader.innerText = item.fields.name;
     accordionHeader.setAttribute("aria-expanded", "false");
     accordionHeader.setAttribute("aria-controls", item.fields.internalName);
+    accordionHeader.setAttribute("role", "button");
 
     accordionHeader.addEventListener("click", () => {
       this.toggleAccordionContent(accordionHeader, item.fields.internalName);
@@ -50,6 +51,7 @@ export class Accordion {
     const accordionContent = document.createElement("div");
     accordionContent.classList.add("accordion-content");
     accordionContent.setAttribute("id", item.fields.internalName);
+    accordionContent.setAttribute("role", "region");
     accordionContent.innerHTML = `<p>${item.fields.text}</p>`;
 
     return accordionContent;
