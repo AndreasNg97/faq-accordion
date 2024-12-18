@@ -1,3 +1,7 @@
+body {
+  background-color: #041f35;
+}
+
 main {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -7,5 +11,5 @@ main {
 }
 
 h1 {
-  color: red;
+  color: #fff7ca;
 }

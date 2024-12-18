@@ -23,6 +23,8 @@ export class Accordion {
     accordionItem.appendChild(accordionHeader);
     accordionItem.appendChild(accordionContent);
 
+    accordionHeader.setAttribute("data-accordion-item", JSON.stringify(item));
+
     return accordionItem;
   }
 
@@ -63,7 +65,8 @@ export class Accordion {
   }
 
   handleKeyboardNavigation(event, item) {
-    const accordionItem = item;
+    const accordionItem = event.target.closest(".accordion-item");
+
     if (event.key === "ArrowDown") {
       const nextItem = accordionItem.nextElementSibling;
       if (nextItem) {

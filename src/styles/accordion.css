@@ -1,18 +1,22 @@
 .accordion-container {
   max-width: 600px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
 }
 
 .accordion-item {
   margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 1px solid #0079ad;
+  tabindex: 0;
 }
 
 .accordion-header {
-  background-color: #f4f4f4;
+  background-color: #0e4066;
   border: none;
   padding: 10px;
+  color: #fffce8;
   width: 100%;
   text-align: left;
   cursor: pointer;
@@ -22,19 +26,23 @@
 }
 
 .accordion-header:hover {
-  background-color: #e0e0e0;
+  background-color: #0f2e47;
 }
 
 .accordion-header:focus {
-  outline: 3px solid #005fcc;
-  background-color: #e0e0e0;
+  outline: 1px solid #005fcc;
+  background-color: #0f2e47;
 }
-
+/* 
+.accordion-header:focus + .accordion-content {
+  outline: 1px solid #005fcc;
+}
+ */
 .accordion-content {
   max-height: 0;
   padding: 0 10px;
   overflow: hidden;
-
+  color: #fff;
   transition: max-height 0.3s ease-out;
 }
 
